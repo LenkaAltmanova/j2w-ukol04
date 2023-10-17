@@ -5,6 +5,7 @@ import cz.czechitas.java2webapps.ukol3.service.VizitkaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,4 +36,22 @@ public class VizitkaController {
     result.addObject("vizitka", service.getById(id));
     return result;
   }
+
+  @PostMapping("/detail/{id}")
+  public String edit(@PathVariable int id, Vizitka vizitka) {
+    service.edit(id, vizitka);
+    return "redirect:/";
+  }
+  @PostMapping("/nova")
+  public String append(Vizitka vizitka)  {
+    service.append(vizitka);
+    return "redirect:/";
+  }
+
+  @PostMapping("/delete")
+  public String deleteByID(int id) {
+    service.deleteById(id);
+    return "redirect:/";
+  }
+
 }

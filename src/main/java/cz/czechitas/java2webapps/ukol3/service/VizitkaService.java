@@ -28,7 +28,7 @@ public class VizitkaService {
                     "Czechitas z. s.",
                     "Škrobárenská 511/3",
                     "61700 Brno",
-                    null,
+                    "m@brno.cz",
                     "+420 800123456",
                     "www.czechitas.cz"
             )
@@ -51,7 +51,7 @@ public class VizitkaService {
                     "Vavrečkova 5262",
                     "76001 Zlín",
                     "mirka@czechitas.cs",
-                    null,
+                    "88888888",
                     "www.czechitas.cz"
             )
     );
@@ -61,8 +61,8 @@ public class VizitkaService {
                     "Czechitas z. s.",
                     "Jungmannova 3",
                     "77900 Olomouc",
-                    null,
-                    null,
+                    "cejka@czechitas.cz",
+                    "888888888",
                     "www.czechitas.cz"
             )
     );
@@ -72,12 +72,19 @@ public class VizitkaService {
                     "Czechitas z. s.",
                     "Lipová 1789/9",
                     "37005 České Budějovice",
-                    null,
-                    null,
+                    "katka@seznam.cz",
+                    "888888888",
                     "www.czechitas.cz"
             )
     );
   }
+    public void append(Vizitka vizitka) {
+        seznamVizitek.add(vizitka);
+    }
+
+    public void deleteById(int id) {
+        seznamVizitek.remove(id);
+    }
 
   public List<Vizitka> getAll() {
     return seznamVizitek;
@@ -86,4 +93,8 @@ public class VizitkaService {
   public Vizitka getById(int id) {
     return seznamVizitek.get(id);
   }
+
+    public void edit(int id, Vizitka vizitka) {
+        seznamVizitek.set(id, vizitka);
+    }
 }

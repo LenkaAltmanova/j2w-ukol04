@@ -14,8 +14,6 @@ public class Vizitka {
   private String telefon;
   private String web;
 
-  public Vizitka() {
-  }
 
   public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
     this.jmeno = Objects.requireNonNull(jmeno);
@@ -86,4 +84,6 @@ public class Vizitka {
   public String getCelaAdresa() {
     return ulice + ", " + obecPsc;
   }
+
+
 }
