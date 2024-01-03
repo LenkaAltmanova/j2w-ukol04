@@ -9,6 +9,7 @@ import java.util.List;
 @Service
 public class VizitkaService {
   private final List<Vizitka> seznamVizitek = new ArrayList<>();
+    private final String userDidntProvideParameterMessage = "n/a";
 
   public VizitkaService() {
     seznamVizitek.add(
@@ -96,5 +97,13 @@ public class VizitkaService {
 
     public void edit(int id, Vizitka vizitka) {
         seznamVizitek.set(id, vizitka);
+    }
+
+    public String getUserDidntProvideParameterMessage() {
+        return userDidntProvideParameterMessage;
+    }
+
+    public void addNewBusinessCard(Vizitka vizitka) {
+        seznamVizitek.add(vizitka);
     }
 }
